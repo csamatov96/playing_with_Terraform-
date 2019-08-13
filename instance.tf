@@ -1,5 +1,5 @@
 resource "aws_instance" "example" {
-  Name = "instance_with_s3_access"
+  name = "instance_with_s3_access"
   ami                  = "${var.ami}"
   instance_type        = "${var.instance_type}"
   key_name             = "${var.key_name}" #
