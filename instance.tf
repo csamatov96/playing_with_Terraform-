@@ -1,5 +1,4 @@
 resource "aws_instance" "example" {
-  name = "instance_with_s3_access"
   ami                  = "${var.ami}"
   instance_type        = "${var.instance_type}"
   key_name             = "${var.key_name}" #
@@ -7,6 +6,7 @@ resource "aws_instance" "example" {
   iam_instance_profile = "${aws_iam_instance_profile.instance_profile.name}" #
 
   tags = {
-    Dept = "DevOps"
+    Name = "${var.Name}"  
+    Dept = "${var.Dept}"
   }
 }
