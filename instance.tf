@@ -5,7 +5,7 @@ resource "aws_instance" "example" {
   security_groups      = ["${aws_security_group.ssh.name}"] #
   iam_instance_profile = "${aws_iam_instance_profile.instance_profile.name}" #
 
-  tags {
+  tags = {
     Name = "instance_with_s3_access"
   }
 }
